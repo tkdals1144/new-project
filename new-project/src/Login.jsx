@@ -8,6 +8,7 @@ function Login({ setUser }) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
+    // await를 사용하기 위한 async 함수
     const handleSubmit = async (e) => {
         // form 태그의 폼 전송 기능 차단
         e.preventDefault();
@@ -17,16 +18,26 @@ function Login({ setUser }) {
         // 추후 Spring단의 코드를 개편할때는 뷰 렌더링 기능은 뺄 테니 JSON 응답에 특화된 @RestController로 변경하면 될 듯 하다.
 
         try {
+            // await는 post가 서버 응답을 줄 때까지 기다린 후 JSON 결과값을 res에 부여해 줌
+            // axios.post 를 통해 HTTP POST 요청을 /login 경로로 보냄
+            // 요청 본문에 { email, password } 라는 JSON 데이터를 담아서 보냄
+            // 결과값으로 { succes : true , username : "123" } 과 같은 JSON 응답을 받음
             const res = await axios.post("/login", { email, password });
             if (res.data.success) {
               setUser(res.data.username); // 로그인 성공 → App 상태 갱신
             } else {
               setError(res.data.message);
             }
-          } catch (err) {
+        } catch (err) {
             setError("로그인 서버 오류");
-            console.error(err);
-          }
+            console.error(error);
+        }
+
+        // 위의 await 방식을 함수형 체인 구조로 변환하면 이렇게도 변환할 수 있다.
+        // axios.post("/login", { email, password })
+        // .then(res => res.data.success ? setUser(res.data.username) : setError(res.data.message))
+        // .catch(err => setError("로그인 서버 오류"));
+
     }
     
     return (
@@ -56,6 +67,7 @@ function Login({ setUser }) {
             {/* form태그는 동일하게 사용한다. 다만 페이지 리로드 + 서버 전송 방식으로 사용하지 않는다. onSubmit 핸들러를 이용한다. */}
             <form onSubmit={handleSubmit}>
                 <div id="login_box">
+                    {/* onChange 핸들러를 통해 내부의 value값이 변할때마다 해당 값을 바인딩함 */}
                     <input type="text" id="email" name="email" placeholder="이메일주소를 입력해주세요" value={email} onChange={
                         (e) => setEmail(e.target.value)
                     }/>
