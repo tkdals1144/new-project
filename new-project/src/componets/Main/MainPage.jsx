@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import Header from './Header.jsx'
-import Footer from './Footer.jsx'
 import { Link } from 'react-router-dom'
 import axios from 'axios';
+import styles from './MainPage.module.css'
 
 function MainPage() {
 
@@ -22,31 +21,37 @@ function MainPage() {
         fetchBanners();
     }, []);
 
+    const handlePrev = () => {
+
+    }
+
+    const handleNext = () => {
+
+    }
+
     return (
     <>
-        <Header/>
         <main>
-            <div id="banner_wrap">
-                <div id="prev_btn_wrap" className="btn_wrap" onClick={handlePrev}>
-                    <img src="/prev.svg" alt="" className="btn"/>
+            <div id={styles.banner_wrap}>
+                <div id={styles.prev_btn_wrap} className={styles.btn_wrap} onClick={handlePrev}>
+                    <img src="/prev.svg" alt="" className={styles.btn}/>
                 </div>
-                <div id="next_btn_wrap" className="btn_wrap" onClick={handleNext}>
-                    <img src="/next.svg" alt="" className="btn"/>
+                <div id={styles.next_btn_wrap} className={styles.btn_wrap} onClick={handleNext}>
+                    <img src="/next.svg" alt="" className={styles.btn}/>
                 </div>
-                <ul id="banner">
+                {/* <ul id={styles.banner}>
                     {
                         images.map((bi, index) => (
-                            <li key={index} className='banner_img_wrap'>
+                            <li key={index} className={styles.banner_img_wrap}>
                                 <Link to="/promotion" target='_blank' rel='noreferrer'>
-                                    <img src={bi} alt={`Banner ${index + 1}`} className='banner_img'/>
+                                    <img src={bi} alt={`Banner ${index + 1}`} className={styles.banner_img}/>
                                 </Link>
                             </li>
                         ))
                     }
-                </ul>
+                </ul> */}
             </div>
         </main>
-        <Footer/>
     </>
     )
 }

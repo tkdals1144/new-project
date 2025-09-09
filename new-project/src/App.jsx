@@ -1,15 +1,28 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import Login from './Login.jsx'
+import MainPage from './componets/Main/MainPage.jsx'
 import './App.css'
+import { Header, Footer, Login, Signup, Info } from './componets'
+import { Navigate, Route, Routes } from 'react-router-dom'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+  
+  // header/footer 제외할 경로
+  const noLayoutRoutes = ["/login", "/signup", "/board"];
+
+  const hideLayout = noLayoutRoutes.includes(location.pathname);
 
   return (
     <>
-      <Login/>
+      {!hideLayout && <Header/>}
+      <Routes>
+        <Route path='/' element = {<MainPage/>}/>
+        <Route path='/main' element = {<Navigate to='/' replace/>}/>
+        <Route path='/login' element = {<Login/>}/>
+        <Route path='/signup' element = {<Signup/>}/>
+        <Route path='/info' element = {<Info/>}/>
+      </Routes>
+      {!hideLayout && <Footer/>}
     </>
   )
 }

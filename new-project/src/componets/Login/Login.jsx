@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import axios from "axios"
+import styles from './Login.module.css'
 
 
 function Login({ setUser }) {
@@ -46,43 +47,46 @@ function Login({ setUser }) {
         //     <a th:href="@{/main}">
         //         <h1>CALTIZM</h1>
         //     </a>
-        //     <p id="title">로그인</p>
+        //     <p id={styles.title}>로그인</p>
         //     <form th:action="@{/login}" method="post">
-        //         <div id="login_box">
-        //             <input type="text" id="email" name="email" placeholder="이메일주소를 입력해주세요">
-        //             <input type="password" id="passwd" name="password" placeholder="비밀번호를 입력해주세요">
-        //             <button id="login_btn">로그인</button>
+        //         <div id={styles.login_box}>
+        //             <input type="text" id={styles.email} name="email" placeholder="이메일주소를 입력해주세요">
+        //             <input type="password" id={styles.passwd} name="password" placeholder="비밀번호를 입력해주세요">
+        //             <button id={styles.login_btn}>로그인</button>
         //         </div>
         //     </form>
-        //     <div id="anchor_box">
-        //         <a th:href="@{/signup}" id="sign_up">회원가입</a>
-        //         <a th:href="@{/find-password}" id="find_passwd">비밀번호를 잊으셨나요?</a>
+        //     <div id={styles.anchor_box}>
+        //         <a th:href="@{/signup}" id={styles.sign_up}>회원가입</a>
+        //         <a th:href="@{/find-password}" id={styles.find_passwd}>비밀번호를 잊으셨나요?</a>
         //     </div>
         // </main>
-        <main>
+        <div className={styles.main_wrap}>
+            <main>
             {/* a태그 대신 Link 태그를 이용해서 이동 */}
             <Link to="/main">
                 <h1>CALTIZM</h1>
             </Link>
-            <p id="title">로그인</p>
+            <p id={styles.title}>로그인</p>
             {/* form태그는 동일하게 사용한다. 다만 페이지 리로드 + 서버 전송 방식으로 사용하지 않는다. onSubmit 핸들러를 이용한다. */}
             <form onSubmit={handleSubmit}>
-                <div id="login_box">
+                <div id={styles.login_box}>
                     {/* onChange 핸들러를 통해 내부의 value값이 변할때마다 해당 값을 바인딩함 */}
-                    <input type="text" id="email" name="email" placeholder="이메일주소를 입력해주세요" value={email} onChange={
+                    <input type="text" id={styles.email} name="email" placeholder="이메일주소를 입력해주세요" value={email} onChange={
                         (e) => setEmail(e.target.value)
                     }/>
-                    <input type="password" id="passwd" name="password" placeholder="비밀번호를 입력해주세요" value={password} onChange={
+                    <input type="password" id={styles.passwd} name="password" placeholder="비밀번호를 입력해주세요" value={password} onChange={
                         (e) => setPassword(e.target.value)
                     }/>
-                    <button id="login_btn" type="submit">로그인</button>
+                    <button id={styles.login_btn} type="submit">로그인</button>
                 </div>
             </form>
-            <div id="anchor_box">
-                <Link to="/signup" id="sign_up">회원가입</Link>
-                <Link to="/find-password" id="find_passwd">비밀번호를 잊으셨나요?</Link>
+            <div id={styles.anchor_box}>
+                <Link to="/signup" id={styles.sign_up}>회원가입</Link>
+                <Link to="/find-password" id={styles.find_passwd}>비밀번호를 잊으셨나요?</Link>
             </div>
         </main>
+        </div>
+
     )
 }
 
