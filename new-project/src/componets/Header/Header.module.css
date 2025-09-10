@@ -203,7 +203,7 @@ header {
     }
 }
 
-#header_icon_wrap img {
+#header_profile, #header_alarm {
     margin: 0 4px;
 }
 

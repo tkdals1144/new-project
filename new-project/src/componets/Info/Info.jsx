@@ -4,7 +4,7 @@ import styles from './Info.module.css'
 
 function Info() {
   return (
-    <main>
+    <div className={styles.main_info}>
         <div className={styles.info_wrap_wrap}>
             <div className={styles.info_img_wrap}>
                 <img src="/infoImg.webp" alt="" className={styles.info_img}/>
@@ -22,11 +22,11 @@ function Info() {
                 <h2 className={styles.team_slogan}>More easily, more conveniently</h2>
             </div>
             <ul className={styles.info_box2}>
-                <li className={styles.info_link}><img src="figma.svg" alt="" className={styles.info_link_img}/><a href="https://www.figma.com/design/oX7nOuiN4E4uPu8dZRhAGk/CALTIZM_FRONT?node-id=0-1&p=f&t=sQq9WBxXrjiSysoy-0">Figma</a></li>
+                <li className={styles.info_link}><img src="figma.svg" alt="" className={styles.info_link_img}/><a className={styles.a} href="https://www.figma.com/design/oX7nOuiN4E4uPu8dZRhAGk/CALTIZM_FRONT?node-id=0-1&p=f&t=sQq9WBxXrjiSysoy-0">Figma</a></li>
                 <li id="none" className={styles.info_link}><img src="project.svg" alt="" className={styles.info_link_img}/><Link to="/" download="">PPT</Link></li>
             </ul>
         </div>
-    </main>
+    </div>
   )
 }
 

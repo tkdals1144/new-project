@@ -36,9 +36,9 @@ function Footer() {
             </div>
             <Link to="https://www.cultizm.com/">
                 <div className={styles.footer_box}>
-                    <h2>Visit the page for more details</h2>
+                    <h2 className={styles.h2}>Visit the page for more details</h2>
                     <div className={styles.footer_box2_btn}>
-                        <p>go cultizm</p>
+                        <p className={styles.footer_box2_p}>go cultizm</p>
                     </div>
                 </div>
             </Link>

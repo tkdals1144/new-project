@@ -61,10 +61,10 @@ function Login({ setUser }) {
         //     </div>
         // </main>
         <div className={styles.main_wrap}>
-            <main>
+            <div className={styles.main_box}>
             {/* a태그 대신 Link 태그를 이용해서 이동 */}
             <Link to="/main">
-                <h1>CALTIZM</h1>
+                <h1 className={styles.h1}>CALTIZM</h1>
             </Link>
             <p id={styles.title}>로그인</p>
             {/* form태그는 동일하게 사용한다. 다만 페이지 리로드 + 서버 전송 방식으로 사용하지 않는다. onSubmit 핸들러를 이용한다. */}
@@ -84,7 +84,7 @@ function Login({ setUser }) {
                 <Link to="/signup" id={styles.sign_up}>회원가입</Link>
                 <Link to="/find-password" id={styles.find_passwd}>비밀번호를 잊으셨나요?</Link>
             </div>
-        </main>
+        </div>
         </div>
 
     )

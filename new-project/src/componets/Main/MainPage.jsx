@@ -31,7 +31,7 @@ function MainPage() {
 
     return (
     <>
-        <main>
+        <div className={styles.main}>
             <div id={styles.banner_wrap}>
                 <div id={styles.prev_btn_wrap} className={styles.btn_wrap} onClick={handlePrev}>
                     <img src="/prev.svg" alt="" className={styles.btn}/>
@@ -51,7 +51,7 @@ function MainPage() {
                     }
                 </ul> */}
             </div>
-        </main>
+        </div>
     </>
     )
 }

@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Faculty+Glyphic&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Playwrite+CO+Guides&display=swap');
 
-main {
+.main_info {
     display: flex;
     align-items: center;
 }
@@ -75,7 +75,7 @@ b {
     right: 5%;
 }
 
-a {
+.a {
     cursor: pointer;
     font-size: 20px;
 }

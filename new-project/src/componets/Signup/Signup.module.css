@@ -3,11 +3,7 @@
     justify-content: center;
 }
 
-main {
-    width: 580px;
-}
-
-h1 {
+.h1 {
     font-weight: bold;
     font-size: 42px;
     color: rgba(141, 138, 138, 1);
@@ -74,7 +70,7 @@ h1 {
     padding-left: 25px;
 }
 
-.box p {
+.addressEnglishText, .postcodeText {
     cursor: pointer;
     color: rgb(135, 120, 120);
 }
@@ -115,7 +111,7 @@ h1 {
     background-color: rgb(236, 172, 172);
 }
 
-#plus_btn img {
+.plus {
     width: 32px;
     height: 32px;
 }

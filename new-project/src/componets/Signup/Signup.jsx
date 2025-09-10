@@ -46,7 +46,7 @@ function Signup( {setUser} ) {
     <div className={styles.main_wrap}>
             <main>
         <Link to='/main'>
-            <h1>CALTIZM</h1>
+            <h1 className={styles.h1}>CALTIZM</h1>
         </Link>
         <form onSubmit={handleSubmit}>
             <div id={styles.margin_box}></div>
@@ -81,7 +81,7 @@ function Signup( {setUser} ) {
                     </div>
                 </div>
                 <div id={styles.plus_btn}>
-                    <img src="/plus.svg" alt=""/>
+                    <img className={styles.plus} src="/plus.svg" alt=""/>
                 </div>
                 <div className={styles.bigbox}>
                     <div id={styles.passwd_box} className={styles.box}>

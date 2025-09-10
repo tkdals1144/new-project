@@ -3,12 +3,12 @@
     justify-content: center;
 }
 
-main {
+.main_box {
     display: block;
     width: 580px;
 }
 
-h1 {
+.h1 {
     font-weight: bold;
     font-size: 42px;
     color: rgba(141, 138, 138, 1);
@@ -64,45 +64,20 @@ h1 {
     margin-right: 15px;
 }
 
-#anchor_box a {
+#sign_up {
+    margin-right: 8px;
     font-size: 14px;
     color: rgb(99, 99, 243);
 }
 
-#anchor_box a:hover {
+#find_passwd {
+    font-size: 14px;
+    color: rgb(99, 99, 243);
+}
+
+#sign_up:hover, #find_passwd:hover {
     color: blue;
     text-decoration: underline;
-}
-
-#sign_up {
-    margin-right: 8px;
-}
-
-#explain_txt {
-    text-align: right;
-    margin-top: 20px;
-}
-
-#explain_txt p {
-    color: rgba(134, 134, 134, 1);
-    font-size: 16px;
-}
-
-#box {
-    width: 580px;
-    margin-top: 10px;
-    padding: 35px;
-    border: 2px solid rgba(172, 172, 172, 1);
-    border-top-left-radius: 20px;
-}
-
-#box input {
-    width: 100%;
-    height: 50px;
-    padding: 20px;
-    margin-top: 30px;
-    border: 2px solid rgba(172, 172, 172, 1);
-    font-size: 18px;
 }
 
 #btn {
